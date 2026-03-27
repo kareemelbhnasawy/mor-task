@@ -1,0 +1,10 @@
+export { Navbar } from './Navbar';
+export { Hero } from './Hero';
+export { Benefits } from './Benefits';
+export { ScentStory } from './ScentStory';
+export { SocialProof } from './SocialProof';
+export { ProductHighlights } from './ProductHighlights';
+export { FAQ } from './FAQ';
+export { FinalCTA } from './FinalCTA';
+export { Footer } from './Footer';
+export { StickyMobileCTA } from './StickyMobileCTA';
