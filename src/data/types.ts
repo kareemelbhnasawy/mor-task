@@ -31,6 +31,8 @@ export interface Product {
   size: string;
   badge?: string;
   gradient: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 export interface FAQItem {

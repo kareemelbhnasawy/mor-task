@@ -23,18 +23,23 @@ export function ProductHighlightBlock({ product, featured = false }: ProductHigh
         </span>
       )}
 
-      <div className={`aspect-square md:aspect-[4/3] bg-gradient-to-br ${product.gradient} flex items-center justify-center relative overflow-hidden`}>
-        <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
-        <div className="text-center p-8">
-          <div className="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full bg-white/60 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300">
-            <span className="font-heading text-2xl md:text-3xl font-semibold text-sage-dark">
-              {product.name.charAt(0)}
-            </span>
+      <div className={`aspect-square md:aspect-[4/3] bg-gradient-to-br ${product.gradient} relative overflow-hidden`}>
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.imageAlt || product.name}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/60 backdrop-blur-sm flex items-center justify-center">
+              <span className="font-heading text-2xl md:text-3xl font-semibold text-sage-dark">
+                {product.name.charAt(0)}
+              </span>
+            </div>
           </div>
-          <span className="text-xs font-medium tracking-wider uppercase text-sage-dark/70">
-            {product.size}
-          </span>
-        </div>
+        )}
       </div>
 
       <div className="p-6">

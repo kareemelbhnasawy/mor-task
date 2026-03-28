@@ -1,4 +1,5 @@
 import type { Benefit, Ingredient, Testimonial, Product, FAQItem, TestHypothesis } from './types';
+import { images } from './images';
 
 export const heroContent = {
   badge: 'The Relax Collection',
@@ -107,6 +108,8 @@ export const products: Product[] = [
     size: '100ml',
     badge: 'Bestseller',
     gradient: 'from-lavender-light/20 to-sand-light/20',
+    image: images.calmMist,
+    imageAlt: 'Calm Mist botanical spray bottles on marble surface',
   },
   {
     id: 'p2',
@@ -116,6 +119,8 @@ export const products: Product[] = [
     price: '$52',
     size: '200ml',
     gradient: 'from-sage/10 to-lavender-light/10',
+    image: images.bathOil,
+    imageAlt: 'Luxury bath scene with candle, bath salts, and essential oils',
   },
   {
     id: 'p3',
@@ -125,6 +130,8 @@ export const products: Product[] = [
     price: '$28',
     size: '30g',
     gradient: 'from-sand-light/30 to-blush/10',
+    image: images.balm,
+    imageAlt: 'Elegant cream jar with gold lid on neutral background',
   },
 ];
 

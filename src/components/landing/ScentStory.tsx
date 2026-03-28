@@ -1,6 +1,19 @@
 import { MapPin } from 'lucide-react';
 import { SectionHeading } from '../ui';
 import { ingredients } from '../../data/content';
+import { images } from '../../data/images';
+
+const ingredientImages: Record<string, string> = {
+  i1: images.lavender,
+  i2: images.chamomile,
+  i3: images.vetiver,
+};
+
+const ingredientImageAlts: Record<string, string> = {
+  i1: 'Close-up of French lavender flowers in bloom',
+  i2: 'Wild chamomile flowers with white petals and yellow centers',
+  i3: 'Vetiver grass roots — earthy and grounding',
+};
 
 export function ScentStory() {
   return (
@@ -16,31 +29,38 @@ export function ScentStory() {
           {ingredients.map((ingredient, i) => (
             <article
               key={ingredient.id}
-              className={`
-                relative rounded-2xl p-6 md:p-8 ${ingredient.color}
-                border border-cream-dark/50
-                hover:shadow-md transition-shadow duration-300
-              `}
+              className="relative rounded-2xl overflow-hidden border border-cream-dark/50 hover:shadow-md transition-shadow duration-300 bg-white"
             >
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-semibold tracking-wider uppercase text-sage">
-                  0{i + 1}
-                </span>
-                <span className="w-8 h-px bg-sage/30" />
+              <div className="aspect-[16/10] overflow-hidden">
+                <img
+                  src={ingredientImages[ingredient.id]}
+                  alt={ingredientImageAlts[ingredient.id]}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
               </div>
 
-              <h3 className="font-heading text-2xl font-semibold text-midnight mb-1">
-                {ingredient.name}
-              </h3>
+              <div className="p-6 md:p-8">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs font-semibold tracking-wider uppercase text-sage">
+                    0{i + 1}
+                  </span>
+                  <span className="w-8 h-px bg-sage/30" />
+                </div>
 
-              <div className="flex items-center gap-1.5 text-sm text-stone mb-4">
-                <MapPin className="w-3.5 h-3.5" />
-                {ingredient.origin}
+                <h3 className="font-heading text-2xl font-semibold text-midnight mb-1">
+                  {ingredient.name}
+                </h3>
+
+                <div className="flex items-center gap-1.5 text-sm text-stone mb-4">
+                  <MapPin className="w-3.5 h-3.5" />
+                  {ingredient.origin}
+                </div>
+
+                <p className="text-sm md:text-base text-muted leading-relaxed">
+                  {ingredient.description}
+                </p>
               </div>
-
-              <p className="text-sm md:text-base text-muted leading-relaxed">
-                {ingredient.description}
-              </p>
             </article>
           ))}
         </div>

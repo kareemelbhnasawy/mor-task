@@ -1,6 +1,7 @@
 import { Star, ArrowDown } from 'lucide-react';
 import { PrimaryButton, SecondaryButton } from '../ui';
 import { heroContent } from '../../data/content';
+import { images } from '../../data/images';
 
 export function Hero() {
   return (
@@ -90,18 +91,13 @@ export function Hero() {
           {/* Visual */}
           <div className="order-1 lg:order-2 flex items-center justify-center animate-fade-in-up" style={{ animationDelay: '150ms' }}>
             <div className="relative w-full max-w-sm lg:max-w-md">
-              <div className="aspect-[3/4] rounded-3xl bg-gradient-to-br from-lavender-light/30 via-cream-dark to-sage/15 shadow-xl shadow-sage/10 flex items-center justify-center overflow-hidden">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full bg-white/60 backdrop-blur-sm shadow-inner flex items-center justify-center mb-6">
-                    <span className="font-heading text-5xl md:text-6xl font-bold text-sage-dark/80">S</span>
-                  </div>
-                  <p className="font-heading text-2xl md:text-3xl font-semibold text-midnight/80 mb-1">
-                    Calm Mist
-                  </p>
-                  <p className="text-sm text-muted tracking-wider uppercase">
-                    100ml &middot; Pillow & Body
-                  </p>
-                </div>
+              <div className="aspect-[3/4] rounded-3xl shadow-xl shadow-sage/10 overflow-hidden">
+                <img
+                  src={images.heroProduct}
+                  alt="Stillwell Calm Mist — amber bottle with botanical shadow"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
               </div>
 
               {/* Floating badge */}
